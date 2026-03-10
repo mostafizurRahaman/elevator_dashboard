@@ -6,7 +6,6 @@ import { Typography } from "@/components/typography"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Field, FieldError, FieldLabel } from "@/components/ui/field"
-
 import {
   InputGroup,
   InputGroupAddon,
@@ -20,7 +19,6 @@ import {
   SubmitHandler,
   useForm,
 } from "react-hook-form"
-import z from "zod"
 
 export const AdminLoginForm = () => {
   const form = useForm<loginPayloadType>({
@@ -42,7 +40,7 @@ export const AdminLoginForm = () => {
   return (
     <Card className="border-chart bg-gradient-primary rounded-xl border-2 p-0.5! py-0.5!">
       {/* <CardContent className="rounded-xl bg-background px-21.5 py-27.5"> */}
-      <CardContent className="rounded-xl bg-background p-10 md:p-21.5">
+      <CardContent className="rounded-xl bg-secondary p-10 md:p-21.5">
         <div className="flex flex-col items-center justify-center">
           <Typography variant="Bold_H2">Admin Login</Typography>
           <Typography
