@@ -42,9 +42,11 @@ export function getMenuList(pathname: string): Group[] {
                     submenus: []
                 },
                 {
+                    // Settings is active for both /settings and /profile
                     href: "/settings",
                     label: "Settings",
                     icon: Settings,
+                    active: pathname.startsWith("/settings") || pathname.startsWith("/profile"),
                     submenus: []
                 },
             ]
