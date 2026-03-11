@@ -17,7 +17,7 @@ export const AuthHeader = () => {
           className="flex flex-row items-center gap-6"
         >
           <IcoLogo className="size-16 md:size-auto" />
-          <Typography variant="SemiBold_H2" className="hidden md:block">
+          <Typography variant="SemiBold_H2" as='span' className="hidden md:block">
             Rithos Admin / User
           </Typography>
         </Typography>

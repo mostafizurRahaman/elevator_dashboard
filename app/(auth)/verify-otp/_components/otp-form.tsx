@@ -24,6 +24,7 @@ import {
   loginSchema,
 } from "@/schemas"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useRouter } from "next/navigation"
 import {
   Controller,
   SubmitErrorHandler,
@@ -39,8 +40,13 @@ export const OTPForm = () => {
     },
   })
 
+  const router = useRouter()
+
+
+
   const onSubmit: SubmitHandler<loginOTPType> = async (data) => {
     console.log(data)
+    router.push('/reset-password')
   }
 
   const onError: SubmitErrorHandler<loginOTPType> = async (error) => {
@@ -95,6 +101,7 @@ export const OTPForm = () => {
                   Resend OTP :{" "}
                   <Typography
                     variant="Regular_H5"
+                    as="span"
                     className="text-muted-foreground"
                   >
                     02.00s
