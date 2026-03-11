@@ -21,16 +21,7 @@ export const AuthHeader = () => {
             Rithos Admin / User
           </Typography>
         </Typography>
-        {/* <div>
-          <div className="relative w-full max-w-md">
-            <SearchIcon className="absolute top-1/2 left-3 size-5 -translate-y-1/2 font-bold" />
-            <Input
-              type="text"
-              placeholder="Search"
-              className="py-2 pr-3 pl-10! placeholder:font-semibold"
-            />
-          </div>
-        </div> */}
+
         <Typography
           variant="Regular_H3"
           link="/help"
