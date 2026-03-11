@@ -9,9 +9,9 @@ import { Toaster } from "@/components/ui/sonner"
 
 export default function ProfilePage() {
   return (
-    <ContentLayout title="Setting">
+    <ContentLayout title="Settings > Profile">
       {/* Centered container matching Figma's ~660px wide card */}
-      <div className="flex w-full justify-center rounded-xl bg-[#1A2332]  p-24.5">
+      <div className="flex w-full justify-center rounded-xl bg-[#1A2332] p-24.5">
         <div className="flex w-full flex-col gap-0">
           {/* Teal hero banner */}
           <ProfileHero name="Arif" role="Admin" />

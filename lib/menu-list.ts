@@ -2,13 +2,16 @@ import {
     Users,
     Settings,
     LayoutGrid,
-    LucideIcon
+    LucideIcon,
+    SlidersHorizontal,
+    UserRound,
 } from "lucide-react";
 
 type Submenu = {
     href: string;
     label: string;
     active?: boolean;
+    icon?: LucideIcon;
 };
 
 type Menu = {
@@ -33,23 +36,36 @@ export function getMenuList(pathname: string): Group[] {
                     href: "/dashboard",
                     label: "Dashboard",
                     icon: LayoutGrid,
-                    submenus: []
+                    submenus: [],
                 },
                 {
                     href: "/users",
                     label: "User",
                     icon: Users,
-                    submenus: []
+                    submenus: [],
                 },
                 {
-                    // Settings is active for both /settings and /profile
+                    // Settings parent — active when on /settings OR /profile
                     href: "/settings",
                     label: "Settings",
                     icon: Settings,
-                    active: pathname.startsWith("/settings") || pathname.startsWith("/profile"),
-                    submenus: []
+                    active:
+                        pathname.startsWith("/settings") ||
+                        pathname.startsWith("/profile"),
+                    submenus: [
+                        {
+                            href: "/settings",
+                            label: "System Settings",
+                            icon: SlidersHorizontal,
+                        },
+                        {
+                            href: "/profile",
+                            label: "Profile",
+                            icon: UserRound,
+                        },
+                    ],
                 },
-            ]
+            ],
         },
     ];
 }
