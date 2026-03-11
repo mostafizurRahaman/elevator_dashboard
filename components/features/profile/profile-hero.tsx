@@ -32,7 +32,7 @@ export function ProfileHero({
   }
 
   return (
-    <div className="w-full rounded-xl overflow-hidden bg-primary flex items-center px-8 py-6 gap-6 min-h-[120px]">
+    <div className="w-full rounded-xl overflow-hidden bg-primary flex items-center justify-center px-8 py-6 gap-6 min-h-[120px]">
       {/* Avatar with camera overlay */}
       <div className="relative shrink-0">
         <div className="size-[88px] rounded-full overflow-hidden border-4 border-white/20 bg-muted">

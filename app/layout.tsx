@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 import { Toaster } from "@/components/ui/sonner"
 import { inter } from "@/fonts"
 import { cn } from "@/lib/utils"
+import { TanstackQueryProvider } from "@/components/TanstackQueryProvider"
 
 export default function RootLayout({
   children,
@@ -18,7 +19,9 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>
-          <TooltipProvider>{children}</TooltipProvider>
+          <TanstackQueryProvider>
+            <TooltipProvider>{children}</TooltipProvider>
+          </TanstackQueryProvider>
           <Toaster position="top-right" richColors closeButton />
         </ThemeProvider>
       </body>
