@@ -50,7 +50,7 @@ export default function CategoriesTable() {
         resetSelection,
       }) => (
         <ToolbarOptions
-          selectedCategories={selectedRows.map((row) => ({
+          selectedUsers={selectedRows.map((row) => ({
             id: String(row.id),
             name: row.name,
           }))}
