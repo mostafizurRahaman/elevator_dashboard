@@ -48,8 +48,8 @@ export function DeleteUserPopup({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       {/* 1. Gradient Border Wrapper to match Login/Add forms */}
-      <DialogContent className="border-chart bg-gradient-primary max-w-[400px] rounded-2xl border-2 p-0.5!">
-        <div className="rounded-[14px] bg-secondary p-6">
+      <DialogContent className="border-chart bg-gradient-primary rounded-2xl border-2 p-0.5!" showCloseButton={false}>
+        <div className="rounded-[14px] bg-background p-6">
           {/* 2. Visual Warning Icon */}
           <div className="mb-4 flex justify-center">
             <div className="rounded-full bg-destructive/10 p-4">
@@ -76,22 +76,22 @@ export function DeleteUserPopup({
           </DialogHeader>
 
           {/* 3. Action Buttons - High Contrast */}
-          <DialogFooter className="mt-8 flex flex-col gap-2 sm:flex-row sm:justify-center">
+          <DialogFooter className="flex w-full items-center gap-5 bg-background ">
             <Button
-              type="button"
               variant="outline"
               onClick={() => onOpenChange(false)}
               disabled={isDeleting}
-              className="border-gray-700 bg-transparent text-gray-300 hover:bg-gray-800 hover:text-white sm:flex-1"
+              size="lg"
+              className="w-1/2 flex-1"
             >
               Cancel
             </Button>
             <Button
-              type="button"
               variant="destructive"
               onClick={handleDelete}
               disabled={isDeleting}
-              className="bg-red-600 hover:bg-red-700 sm:flex-1"
+              size="lg"
+              className="w-1/2 flex-1"
             >
               {isDeleting ? (
                 <Loader2 className="h-4 w-4 animate-spin" />

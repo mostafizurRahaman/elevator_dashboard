@@ -1,21 +1,22 @@
 "use client"
 
 import * as React from "react"
-import { PlusCircle, Trash2 } from "lucide-react"
+import { Trash2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Typography } from "@/components/typography"
 import { AddUserModal } from "./actions/add-user"
-import { BulkDeletePopup } from "./actions/bulk-delete-popup"
+import { BulkDeletePopup } from "./actions/bulk-delete"
+
 
 interface ToolbarOptionsProps {
-  selectedCategories: { id: string; name: string }[]
+  selectedUsers: { id: string; name: string }[]
   allSelectedIds?: string[]
   totalSelectedCount: number
   resetSelection: () => void
 }
 
 export const ToolbarOptions = ({
-  selectedCategories,
+  selectedUsers,
   allSelectedIds = [],
   totalSelectedCount,
   resetSelection,
@@ -24,14 +25,17 @@ export const ToolbarOptions = ({
 
   return (
     <div className="flex items-center gap-2">
+      {/* 1. Add User Modal Trigger */}
       <AddUserModal />
 
-      {/* {totalSelectedCount > 0 && (
+      {/* 2. Bulk Delete UI - Only shows when items are selected */}
+      {totalSelectedCount > 0 && (
         <>
           <Button
             variant="outline"
             size="sm"
             onClick={() => setDeleteDialogOpen(true)}
+            className="border-red-500/50 text-red-400 hover:bg-red-500/10 hover:text-red-300"
           >
             <Trash2 className="mr-2 h-4 w-4" />
             <Typography variant="Medium_H7">
@@ -42,13 +46,13 @@ export const ToolbarOptions = ({
           <BulkDeletePopup
             open={deleteDialogOpen}
             onOpenChange={setDeleteDialogOpen}
-            selectedCategories={selectedCategories}
+            selectedUsers={selectedUsers}
             allSelectedIds={allSelectedIds}
             totalSelectedCount={totalSelectedCount}
             resetSelection={resetSelection}
           />
         </>
-      )} */}
+      )}
     </div>
   )
 }

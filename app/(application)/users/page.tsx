@@ -3,8 +3,7 @@ import { Suspense } from "react"
 import UsersTable from "."
 import { Typography } from "@/components/typography"
 import { Button } from "@/components/ui/button"
-import { Plus, SlidersHorizontal, ChevronDown } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
+
 import { ContentLayout } from "@/components/navigation/content-layout"
 
 export const metadata: Metadata = {
@@ -16,7 +15,7 @@ export default function UsersPage() {
   const filters = ["All", "Active", "Deleted", "Pending", "Support"]
 
   return (
-    <ContentLayout>
+    <ContentLayout title="Users">
       <div className="container mx-auto space-y-8 py-8">
         {/* Header Section */}
         <div className="flex items-center justify-between">
@@ -36,12 +35,8 @@ export default function UsersPage() {
             {filters.map((filter) => (
               <Button
                 key={filter}
-                variant={filter === "All" ? "default" : "ghost"}
-                className={`rounded-xl px-6 ${
-                  filter === "All"
-                    ? "border border-gray-600 bg-gray-800 text-white"
-                    : "text-gray-400 hover:text-white"
-                }`}
+                variant={filter === "All" ? "default" : "secondary"}
+                className="cursor-pointer px-6 py-2 hover:bg-primary! hover:text-background"
               >
                 {filter}
               </Button>

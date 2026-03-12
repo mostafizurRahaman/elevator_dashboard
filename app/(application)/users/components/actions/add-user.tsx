@@ -85,7 +85,10 @@ export const AddUserModal = () => {
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="border-chart bg-gradient-primary rounded-xl border-2 p-0.5!">
+      <DialogContent
+        className="border-chart bg-gradient-primary rounded-xl border-2 p-0.5!"
+        showCloseButton={false}
+      >
         <CardContent className="rounded-xl bg-secondary p-5">
           <DialogHeader className="mb-8 flex flex-col items-center justify-center">
             <DialogTitle>
