@@ -1,5 +1,5 @@
 import React from "react"
-import { AdminLoginForm } from "./_components/login-form"
+import { AdminLoginForm } from "./_login/_components/login-form"
 
 const LoginPage = () => {
   return (

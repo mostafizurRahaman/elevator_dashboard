@@ -39,7 +39,7 @@ export function LogoutModal({ open, onOpenChange, onConfirm }: LogoutModalProps)
         await onConfirm()
       } else {
         // TODO: call your auth signOut() here, e.g. await signOut()
-        router.push("/login")
+        router.push("/")
       }
     } finally {
       setIsLoading(false)

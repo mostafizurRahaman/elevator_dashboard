@@ -36,7 +36,7 @@ export const ResetPasswordForm = () => {
 
   const onSubmit: SubmitHandler<resetPasswordPayloadType> = async (data) => {
     console.log(data)
-    router.push('/login')
+    router.push('/')
   }
 
   const onError: SubmitErrorHandler<resetPasswordPayloadType> = async (error) => {

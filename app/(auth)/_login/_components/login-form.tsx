@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/input-group"
 import { loginPayloadType, loginSchema } from "@/schemas"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useRouter } from "next/navigation"
 import {
   Controller,
   SubmitErrorHandler,
@@ -29,8 +30,11 @@ export const AdminLoginForm = () => {
     },
   })
 
+  const router = useRouter()
+
   const onSubmit: SubmitHandler<loginPayloadType> = async (data) => {
     console.log(data)
+    router.push("/dashboard")
   }
 
   const onError: SubmitErrorHandler<loginPayloadType> = async (error) => {

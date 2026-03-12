@@ -102,7 +102,7 @@ export const ForgotPasswordForm = () => {
                   <div className="h-px w-[123px] bg-muted-foreground/30"></div>
                   <Typography variant="Regular_H6" className="text-muted-foreground text-center">
                     Back to{" "}
-                    <Typography variant="Regular_P" as="span" className="text-primary hover:text-primary/80 transition-colors inline!" link="/login">
+                    <Typography variant="Regular_P" as="span" className="text-primary hover:text-primary/80 transition-colors inline!" link="/">
                       Login
                     </Typography>
                   </Typography>
