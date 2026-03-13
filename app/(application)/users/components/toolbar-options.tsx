@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Typography } from "@/components/typography"
 import { AddUserModal } from "./actions/add-user"
 import { BulkDeletePopup } from "./actions/bulk-delete"
+import { FilterModal } from "./actions/filter"
 
 
 interface ToolbarOptionsProps {
@@ -27,6 +28,9 @@ export const ToolbarOptions = ({
     <div className="flex items-center gap-2">
       {/* 1. Add User Modal Trigger */}
       <AddUserModal />
+
+      {/* 1.5 Filter Modal Trigger */}
+      <FilterModal />
 
       {/* 2. Bulk Delete UI - Only shows when items are selected */}
       {totalSelectedCount > 0 && (
