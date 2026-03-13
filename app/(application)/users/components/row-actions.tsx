@@ -15,6 +15,7 @@ import { Typography } from "@/components/typography"
 import { User } from "@/types/user"
 import { DeleteUserPopup } from "./actions/delete-user"
 import { EditUserModal } from "./actions/edit-user"
+import { ViewUserModal } from "./actions/view-user"
 
 // import { DeleteCategoryPopup } from "./actions/delete-category-popup";
 // import { EditCategoryModal } from "./actions/edit-category-popup";
@@ -30,6 +31,7 @@ export function DataTableRowActions<TData>({
 }: DataTableRowActionsProps<TData>) {
   const [deleteDialogOpen, setDeleteDialogOpen] = React.useState(false)
   const [editDialogOpen, setEditDialogOpen] = React.useState(false)
+  const [viewDialogOpen, setViewDialogOpen] = React.useState(false)
   const user = row.original as User
 
   // Function to reset all selections
@@ -43,10 +45,10 @@ export function DataTableRowActions<TData>({
   }
 
   // // Handle view details function
-  // const handleViewDetails = () => {
-  //   console.log("View category details:", user)
-  //   // Implement view details logic or navigation
-  // }
+  const handleViewDetails = () => {
+    console.log("View category details:", user)
+    // Implement view details logic or navigation
+  }
 
   return (
     <>
@@ -60,7 +62,12 @@ export function DataTableRowActions<TData>({
             <span className="sr-only">Open menu</span>
           </Button>
         </DropdownMenuTrigger>
+
         <DropdownMenuContent align="end" className="w-[160px]">
+          <DropdownMenuItem onClick={() => setViewDialogOpen(true)}>
+            <Typography variant="Regular_H7">View</Typography>
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handleEdit}>
             <Typography variant="Regular_H7">Edit</Typography>
           </DropdownMenuItem>
@@ -76,6 +83,11 @@ export function DataTableRowActions<TData>({
         onOpenChange={setEditDialogOpen}
         user={user}
         onSuccess={resetSelection}
+      />
+      <ViewUserModal
+        open={viewDialogOpen}
+        onOpenChange={setViewDialogOpen}
+        user={user}
       />
 
       <DeleteUserPopup
