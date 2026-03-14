@@ -52,6 +52,7 @@ const Page = () => {
             changeType="positive"
             chartData={activeUsersData}
             chartColor="#48bb78"
+            labelName="User"
             icon={<Users size={22} />}
           />
           <StatCard
@@ -61,6 +62,7 @@ const Page = () => {
             changeType="positive"
             chartData={dailyCheckInsData}
             chartColor="#48bb78"
+             labelName="User"
             icon={<CheckSquare size={22} />}
           />
           <StatCard
@@ -68,6 +70,7 @@ const Page = () => {
             value="4.5%"
             change="-3.5%"
             changeType="negative"
+             labelName="1"
             chartData={supportData}
             chartColor="#f56565"
             icon={<HeadphonesIcon size={22} />}

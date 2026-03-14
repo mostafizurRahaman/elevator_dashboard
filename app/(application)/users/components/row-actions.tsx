@@ -16,6 +16,10 @@ import { User } from "@/types/user"
 import { DeleteUserPopup } from "./actions/delete-user"
 import { EditUserModal } from "./actions/edit-user"
 import { ViewUserModal } from "./actions/view-user"
+import IcoProfile from "@/assets/icons/ico-profile"
+import IcoUserEdit from "@/assets/icons/ico-user-edit"
+import IcoDelete from "@/assets/icons/ico-delete"
+import IcoResetPassword from "@/assets/icons/ico-reset-password"
 
 // import { DeleteCategoryPopup } from "./actions/delete-category-popup";
 // import { EditCategoryModal } from "./actions/edit-category-popup";
@@ -65,15 +69,35 @@ export function DataTableRowActions<TData>({
 
         <DropdownMenuContent align="end" className="w-[160px]">
           <DropdownMenuItem onClick={() => setViewDialogOpen(true)}>
-            <Typography variant="Regular_H7">View</Typography>
+            <div className="flex items-center justify-center gap-2">
+              <IcoProfile />
+              <Typography variant="Regular_H7">View profile</Typography>
+            </div>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handleEdit}>
-            <Typography variant="Regular_H7">Edit</Typography>
+            <div className="flex items-center justify-center gap-2">
+              <IcoUserEdit />
+              <Typography variant="Regular_H7">User edit</Typography>
+            </div>
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>
+            <div className="flex items-center justify-center gap-2">
+              <IcoResetPassword />
+              <Typography variant="Regular_H7" className="">
+                Reset password
+              </Typography>
+            </div>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={() => setDeleteDialogOpen(true)}>
-            <Typography variant="Regular_H7">Delete</Typography>
+            <div className="flex items-center justify-center gap-2">
+              <IcoDelete />
+              <Typography variant="Regular_H7" className="text-destructive">
+                Delete
+              </Typography>
+            </div>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

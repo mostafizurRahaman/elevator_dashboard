@@ -17,7 +17,7 @@ import {
   Plus,
 } from "lucide-react"
 
-import IcoEmail from "@/assets/ico-email"
+import IcoEmail from "@/assets/icons/ico-email"
 import { Typography } from "@/components/typography"
 import { Button } from "@/components/ui/button"
 import { CardContent } from "@/components/ui/card"

@@ -6,6 +6,7 @@ import { EditProfileForm } from "@/components/features/profile/edit-profile-form
 import { ChangePasswordForm } from "@/components/features/profile/change-password-form"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Toaster } from "@/components/ui/sonner"
+import { cn } from "@/lib/utils"
 
 export default function ProfilePage() {
   return (
@@ -19,24 +20,27 @@ export default function ProfilePage() {
           {/* Tabs: Edit Profile / Change Password */}
           <Tabs
             defaultValue="edit-profile"
-            className="mx-auto w-full md:max-w-md"
+            className="mx-auto mt-15 w-full md:max-w-md"
           >
             {/* Tab triggers — Figma shows underline variant, primary color on active */}
             <TabsList
               variant="line"
-              className="h-12 w-full justify-start gap-0 rounded-none border-b border-border bg-transparent px-0"
+              className="w-full justify-start gap-0 rounded-none border-b border-border"
             >
               <TabsTrigger
-                id="tab-edit-profile"
                 value="edit-profile"
-                className="h-full rounded-none px-6 text-base font-semibold text-muted-foreground transition-colors hover:text-foreground data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:text-primary data-[state=active]:after:hidden"
+                className={cn(
+                  "rounded-none px-6 text-base font-semibold hover:text-primary data-[state=active]:border-b-2 data-[state=active]:border-[#4ECDC4] data-[state=active]:text-[#4ECDC4]"
+                )}
               >
                 Edit Profile
               </TabsTrigger>
+
               <TabsTrigger
-                id="tab-change-password"
                 value="change-password"
-                className="h-full rounded-none px-6 text-base font-semibold text-muted-foreground transition-colors hover:text-foreground data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:text-primary data-[state=active]:after:hidden"
+                className={cn(
+                  "rounded-none px-6 text-base font-semibold hover:text-primary data-[state=active]:border-b-2 data-[state=active]:border-[#4ECDC4] data-[state=active]:text-[#4ECDC4]"
+                )}
               >
                 Change Password
               </TabsTrigger>

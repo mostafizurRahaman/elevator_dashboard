@@ -1,6 +1,6 @@
 "use client"
-import IcoEye from "@/assets/ico-eye"
-import IcoLock from "@/assets/ico-lock"
+import IcoEye from "@/assets/icons/ico-eye"
+import IcoLock from "@/assets/icons/ico-lock"
 import { Typography } from "@/components/typography"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -36,10 +36,12 @@ export const ResetPasswordForm = () => {
 
   const onSubmit: SubmitHandler<resetPasswordPayloadType> = async (data) => {
     console.log(data)
-    router.push('/')
+    router.push("/")
   }
 
-  const onError: SubmitErrorHandler<resetPasswordPayloadType> = async (error) => {
+  const onError: SubmitErrorHandler<resetPasswordPayloadType> = async (
+    error
+  ) => {
     console.log(error)
   }
 
@@ -47,12 +49,15 @@ export const ResetPasswordForm = () => {
     <Card className="border-chart bg-gradient-primary rounded-xl border-2 p-0.5! py-0.5!">
       <CardContent className="rounded-xl bg-secondary p-10 md:p-14">
         <div className="flex flex-col items-center justify-center text-center">
-          <Typography variant="Bold_H2" className="text-3xl font-semibold tracking-tight ">
+          <Typography
+            variant="Bold_H2"
+            className="text-3xl font-semibold tracking-tight"
+          >
             Create new password
           </Typography>
           <Typography
             variant="Regular_H6"
-            className="mt-4.5 mb-9 text-muted-foreground font-normal"
+            className="mt-4.5 mb-9 font-normal text-muted-foreground"
           >
             Your new password must be unique from those previously used.
           </Typography>
@@ -67,12 +72,15 @@ export const ResetPasswordForm = () => {
                 render={({ field, fieldState }) => (
                   <Field data-invalid={fieldState.invalid}>
                     <FieldLabel htmlFor="password" className="mb-2.5">
-                      <Typography variant="Regular_H7" className="text-muted-foreground">
+                      <Typography
+                        variant="Regular_H7"
+                        className="text-muted-foreground"
+                      >
                         New Password
                       </Typography>
                     </FieldLabel>
 
-                    <InputGroup className="bg-secondary p-1.5 rounded-md border-0">
+                    <InputGroup className="rounded-md border-0 bg-secondary p-1.5">
                       <InputGroupInput
                         {...field}
                         id="password"
@@ -80,14 +88,14 @@ export const ResetPasswordForm = () => {
                         aria-invalid={fieldState.invalid}
                         placeholder="Enter your new password"
                         autoComplete="off"
-                        className="px-4 py-1.5 text-base! placeholder:text-muted-foreground bg-transparent border-0"
+                        className="border-0 bg-transparent px-4 py-1.5 text-base! placeholder:text-muted-foreground"
                       />
                       <InputGroupAddon align="inline-start" className="pl-3">
                         <IcoLock className="size-6 text-muted-foreground" />
                       </InputGroupAddon>
                       <InputGroupAddon align="inline-end" className="pr-3">
                         <IcoEye
-                          className="size-6 cursor-pointer text-muted-foreground hover:text-primary-foreground transition-colors"
+                          className="size-6 cursor-pointer text-muted-foreground transition-colors hover:text-primary-foreground"
                           onClick={() => setShowPassword(!showPassword)}
                         />
                       </InputGroupAddon>
@@ -106,12 +114,15 @@ export const ResetPasswordForm = () => {
                 render={({ field, fieldState }) => (
                   <Field data-invalid={fieldState.invalid}>
                     <FieldLabel htmlFor="confirmPassword" className="mb-2.5">
-                      <Typography variant="Regular_H7" className="text-muted-foreground">
+                      <Typography
+                        variant="Regular_H7"
+                        className="text-muted-foreground"
+                      >
                         Confirm Password
                       </Typography>
                     </FieldLabel>
 
-                    <InputGroup className="bg-secondary p-1.5 rounded-md border-0">
+                    <InputGroup className="rounded-md border-0 bg-secondary p-1.5">
                       <InputGroupInput
                         {...field}
                         id="confirmPassword"
@@ -119,15 +130,17 @@ export const ResetPasswordForm = () => {
                         aria-invalid={fieldState.invalid}
                         placeholder="Confirm your new password"
                         autoComplete="off"
-                        className="px-4 py-1.5 text-base! placeholder:text-muted-foreground bg-transparent border-0"
+                        className="border-0 bg-transparent px-4 py-1.5 text-base! placeholder:text-muted-foreground"
                       />
                       <InputGroupAddon align="inline-start" className="pl-3">
                         <IcoLock className="size-6 text-muted-foreground" />
                       </InputGroupAddon>
                       <InputGroupAddon align="inline-end" className="pr-3">
                         <IcoEye
-                          className="size-6 cursor-pointer text-muted-foreground hover:text-primary-foreground transition-colors"
-                          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                          className="size-6 cursor-pointer text-muted-foreground transition-colors hover:text-primary-foreground"
+                          onClick={() =>
+                            setShowConfirmPassword(!showConfirmPassword)
+                          }
                         />
                       </InputGroupAddon>
                     </InputGroup>
@@ -142,7 +155,7 @@ export const ResetPasswordForm = () => {
               <Button
                 variant={"default"}
                 color="primary"
-                className="mt-6 w-full cursor-pointer bg-primary font-bold capitalize text-primary-foreground hover:bg-primary/90 rounded-full"
+                className="mt-6 w-full cursor-pointer rounded-full bg-primary font-bold text-primary-foreground capitalize hover:bg-primary/90"
                 size="lg"
               >
                 Reset Password

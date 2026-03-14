@@ -18,7 +18,7 @@ import {
 } from "lucide-react"
 import { toast } from "sonner"
 
-import IcoEmail from "@/assets/ico-email"
+import IcoEmail from "@/assets/icons/ico-email"
 import { Typography } from "@/components/typography"
 import { Button } from "@/components/ui/button"
 import { CardContent } from "@/components/ui/card"

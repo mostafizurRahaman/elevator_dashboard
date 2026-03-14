@@ -59,7 +59,7 @@ export function ProfileHero({
           aria-label="Change profile picture"
           className="absolute bottom-0 right-0 bg-background rounded-full p-1.5 shadow-md hover:bg-secondary transition-colors border border-border"
         >
-          <Camera size={14} className="text-foreground" />
+          <Camera size={18} className="text-primary" />
         </button>
 
         <input

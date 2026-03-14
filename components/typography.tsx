@@ -73,8 +73,8 @@ export const Typography: FC<TypographyProps> = ({
 
   const fontSizeMap: Record<HeadingSize, string> = {
     H1: "text-[30px] md:text-[39px]",
-    H2: "text-[25px] md:text-[31px]",
-    H3: "text-[20px] md:text-[25px]",
+    H2: "text-[25px] md:text-[30px]",
+    H3: "text-[20px] md:text-[24px]",
     H4: "text-[16px] md:text-[20px]",
     H5: "text-[14px] md:text-[16px]",
     H6: "text-[13px] md:text-[14px]",
