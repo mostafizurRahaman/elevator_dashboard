@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import { Card } from "@/components/ui/card";
-import { Typography } from "@/components/typography";
+import { Card } from "@/components/ui/card"
+import { Typography } from "@/components/typography"
 import {
   BarChart,
   Bar,
@@ -10,26 +10,27 @@ import {
   ResponsiveContainer,
   Cell,
   Tooltip,
-} from "recharts";
+  CartesianGrid,
+} from "recharts"
 
 const triggerData = [
   { category: "Stress", value: 80 },
   { category: "Anxiety", value: 70 },
   { category: "Work", value: 60 },
   { category: "Sleep", value: 40 },
-];
+]
 
-const GRADIENT_ID = "topTriggersGradient";
+const GRADIENT_ID = "topTriggersGradient"
 
 interface CustomBarProps {
-  x?: number;
-  y?: number;
-  width?: number;
-  height?: number;
+  x?: number
+  y?: number
+  width?: number
+  height?: number
 }
 
 function CustomBar(props: CustomBarProps) {
-  const { x = 0, y = 0, width = 0, height = 0 } = props;
+  const { x = 0, y = 0, width = 0, height = 0 } = props
   return (
     <g>
       <defs>
@@ -48,12 +49,12 @@ function CustomBar(props: CustomBarProps) {
         opacity={0.85}
       />
     </g>
-  );
+  )
 }
 
 export function TopTriggersChart() {
   return (
-    <Card className="bg-card border-border p-4 flex flex-col gap-4">
+    <Card className="flex flex-col gap-4 border-border bg-card p-4">
       <ResponsiveContainer width="100%" height={240}>
         <BarChart
           layout="vertical"
@@ -77,7 +78,7 @@ export function TopTriggersChart() {
             tickLine={false}
             width={55}
           />
-          <Tooltip
+          {/* <Tooltip
             contentStyle={{
               backgroundColor: "var(--card)",
               border: "1px solid var(--border)",
@@ -86,15 +87,46 @@ export function TopTriggersChart() {
               fontSize: 12,
             }}
             cursor={{ fill: "rgba(255,255,255,0.04)" }}
+          /> */}
+          <Tooltip
+            contentStyle={{
+              backgroundColor: "var(--card)",
+              border: "1px solid var(--border)",
+              borderRadius: "8px",
+              color: "var(--foreground)",
+              fontSize: 12,
+            }}
+            labelStyle={{
+              color: "var(--muted-foreground)", // label color
+              fontSize: 12,
+            }}
+            itemStyle={{
+              color: "#29B4AA", // value / sub text color
+              fontSize: 12,
+            }}
+            cursor={{ fill: "rgba(255,255,255,0.04)" }}
           />
-          <Bar dataKey="value" shape={<CustomBar />} label={{ position: "insideRight", fill: "rgba(255,255,255,0.7)", fontSize: 11 }} />
+          <CartesianGrid
+            strokeDasharray="3 3"
+            strokeOpacity={0.25}
+            spacing={20}
+          />
+          <Bar
+            dataKey="value"
+            shape={<CustomBar />}
+            label={{
+              position: "insideRight",
+              fill: "rgba(255,255,255,0.7)",
+              fontSize: 11,
+            }}
+          />
         </BarChart>
       </ResponsiveContainer>
 
       {/* Legend */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center justify-center gap-2">
         <div
-          className="w-4 h-3 rounded-sm"
+          className="h-3 w-4 rounded-sm"
           style={{
             background: "linear-gradient(to right, #29b4aa, #203453)",
           }}
@@ -104,5 +136,5 @@ export function TopTriggersChart() {
         </Typography>
       </div>
     </Card>
-  );
+  )
 }

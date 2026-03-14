@@ -1,5 +1,5 @@
 "use client"
-import IcoEmail from "@/assets/ico-email"
+import IcoEmail from "@/assets/icons/ico-email"
 import { Typography } from "@/components/typography"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -31,10 +31,12 @@ export const ForgotPasswordForm = () => {
 
   const onSubmit: SubmitHandler<forgotPasswordPayloadType> = async (data) => {
     console.log(data)
-    router.push('/verify-otp')
+    router.push("/verify-otp")
   }
 
-  const onError: SubmitErrorHandler<forgotPasswordPayloadType> = async (error) => {
+  const onError: SubmitErrorHandler<forgotPasswordPayloadType> = async (
+    error
+  ) => {
     console.log(error)
   }
 
@@ -42,12 +44,15 @@ export const ForgotPasswordForm = () => {
     <Card className="border-chart bg-gradient-primary rounded-xl border-2 p-0.5! py-0.5!">
       <CardContent className="rounded-xl bg-secondary p-10 md:p-24">
         <div className="flex flex-col items-center justify-center text-center">
-          <Typography variant="Bold_H2" className="text-3xl font-semibold tracking-tight ">
+          <Typography
+            variant="Bold_H2"
+            className="text-3xl font-semibold tracking-tight"
+          >
             Forgot password
           </Typography>
           <Typography
             variant="Regular_H6"
-            className="mt-4.5 mb-9 text-muted-foreground font-normal"
+            className="mt-4.5 mb-9 font-normal text-muted-foreground"
           >
             No worries, we’ll help you reset it.
           </Typography>
@@ -62,19 +67,22 @@ export const ForgotPasswordForm = () => {
                 render={({ field, fieldState }) => (
                   <Field data-invalid={fieldState.invalid}>
                     <FieldLabel htmlFor="email" className="mb-2.5">
-                      <Typography variant="Regular_H7">
+                      <Typography
+                        variant="Regular_H6"
+                        className="text-[#A0AEC0]"
+                      >
                         Email / Phone Number
                       </Typography>
                     </FieldLabel>
 
-                    <InputGroup className="bg-secondary p-1.5 rounded-md border-0">
+                    <InputGroup className="rounded-md border-0 bg-secondary p-1.5">
                       <InputGroupInput
                         {...field}
                         id="email"
                         aria-invalid={fieldState.invalid}
                         placeholder="Enter your email"
                         autoComplete="off"
-                        className="px-4 py-1.5 text-base! placeholder:text-muted-foreground bg-transparent border-0"
+                        className="border-0 bg-transparent px-4 py-1.5 text-base! placeholder:text-muted-foreground"
                       />
                       <InputGroupAddon align="inline-start" className="pl-3">
                         <IcoEmail className="size-6 text-muted-foreground" />
@@ -91,7 +99,7 @@ export const ForgotPasswordForm = () => {
               <Button
                 variant={"default"}
                 color="primary"
-                className="mt-2 w-full cursor-pointer bg-primary font-bold capitalize text-primary-foreground hover:bg-primary/90 rounded-full"
+                className="mt-2 w-full cursor-pointer rounded-full bg-primary font-bold text-primary-foreground capitalize hover:bg-primary/90"
                 size="lg"
               >
                 Send code
@@ -100,20 +108,33 @@ export const ForgotPasswordForm = () => {
               <div className="mt-2 flex flex-col gap-4">
                 <div className="flex items-center justify-center gap-[17.5px]">
                   <div className="h-px w-[123px] bg-muted-foreground/30"></div>
-                  <Typography variant="Regular_H6" className="text-muted-foreground text-center">
+                  <Typography
+                    variant="Regular_H6"
+                    className="text-center text-muted-foreground"
+                  >
                     Back to{" "}
-                    <Typography variant="Regular_P" as="span" className="text-primary hover:text-primary/80 transition-colors inline!" link="/">
+                    <Typography
+                      variant="Regular_P"
+                      as="span"
+                      className="inline! text-primary transition-colors hover:text-primary/80"
+                      link="/"
+                    >
                       Login
                     </Typography>
                   </Typography>
                   <div className="h-px w-[123px] bg-muted-foreground/30"></div>
                 </div>
 
-                <div className="text-center mt-2">
-                  <Typography variant="Regular_H6" className="text-muted-foreground">
+                <div className="mt-2 text-center">
+                  <Typography
+                    variant="Regular_H6"
+                    className="text-muted-foreground"
+                  >
                     Didn’t receive it?{" "}
-                    <span className="text-primary cursor-pointer hover:text-primary/80 transition-colors">Resend</span>
-                    {" "}in 30 sec
+                    <span className="cursor-pointer text-primary transition-colors hover:text-primary/80">
+                      Resend
+                    </span>{" "}
+                    in 30 sec
                   </Typography>
                 </div>
               </div>

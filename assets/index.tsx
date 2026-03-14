@@ -1,1 +1,1 @@
-export * from "./ico-logo"
+export * from "./icons/ico-logo"

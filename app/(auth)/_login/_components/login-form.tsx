@@ -1,7 +1,7 @@
 "use client"
-import IcoEmail from "@/assets/ico-email"
-import IcoEye from "@/assets/ico-eye"
-import IcoLock from "@/assets/ico-lock"
+import IcoEmail from "@/assets/icons/ico-email"
+import IcoEye from "@/assets/icons/ico-eye"
+import IcoLock from "@/assets/icons/ico-lock"
 import { Typography } from "@/components/typography"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -64,7 +64,10 @@ export const AdminLoginForm = () => {
                 render={({ field, fieldState }) => (
                   <Field data-invalid={fieldState.invalid}>
                     <FieldLabel htmlFor="email">
-                      <Typography variant="Regular_H7">
+                      <Typography
+                        variant="Regular_H6"
+                        className="text-[#A0AEC0]"
+                      >
                         Email / Phone Number
                       </Typography>
                     </FieldLabel>
@@ -96,7 +99,12 @@ export const AdminLoginForm = () => {
                 render={({ field, fieldState }) => (
                   <Field data-invalid={fieldState.invalid}>
                     <FieldLabel htmlFor="password">
-                      <Typography variant="Regular_H7">Password</Typography>
+                      <Typography
+                        variant="Regular_H6"
+                        className="text-[#A0AEC0]"
+                      >
+                        Password
+                      </Typography>
                     </FieldLabel>
 
                     <InputGroup>
@@ -134,11 +142,10 @@ export const AdminLoginForm = () => {
               <Button
                 variant={"default"}
                 color="primary"
-                className="px mt-5 w-full cursor-pointer bg-primary capitalize"
+                className="mt-5 h-auto w-full cursor-pointer rounded-full bg-primary py-3 text-[18px] font-bold capitalize"
                 size="lg"
               >
-                {" "}
-                Log in{" "}
+                Log in
               </Button>
             </div>
           </form>

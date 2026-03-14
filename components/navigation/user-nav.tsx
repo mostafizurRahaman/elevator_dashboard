@@ -21,6 +21,7 @@ import {
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 import { LogoutModal } from "@/components/navigation/logout-modal";
+import profileImage from '@/assets/images/avater-image.png'
 
 export function UserNav() {
   const [logoutOpen, setLogoutOpen] = useState(false);
@@ -39,12 +40,12 @@ export function UserNav() {
                 >
                   <Typography
                     variant="Bold_H6"
-                    className="text-primary focus:border-none hover:outline-none focus:outline-none"
+                    className="text-foreground focus:border-none hover:outline-none focus:outline-none"
                   >
                     Hello, Arif
                   </Typography>
-                  <Avatar className="h-6 w-6 ring-2 ring-primary/30">
-                    <AvatarImage src="#" alt="Avatar" />
+                  <Avatar className="h-6 w-6  ring-0">
+                    <AvatarImage src={profileImage?.src} alt="Avatar" />
                     <AvatarFallback className="bg-primary text-primary-foreground text-xs font-semibold">
                       AR
                     </AvatarFallback>

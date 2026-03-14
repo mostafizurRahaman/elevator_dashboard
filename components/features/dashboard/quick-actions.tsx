@@ -1,8 +1,8 @@
-"use client";
+"use client"
 
-import { Card } from "@/components/ui/card";
-import { Typography } from "@/components/typography";
-import { cn } from "@/lib/utils";
+import { Card } from "@/components/ui/card"
+import { Typography } from "@/components/typography"
+import { cn } from "@/lib/utils"
 import {
   UserPlus,
   Crown,
@@ -10,77 +10,87 @@ import {
   UserMinus,
   FileText,
   Users,
-} from "lucide-react";
+} from "lucide-react"
+import IcoUser from "@/assets/icons/ico-user"
+import IcoDiamond from "@/assets/icons/ico-diamond"
+import IcoMessage from "@/assets/icons/ico-message"
+import IcoDeleteUser from "@/assets/icons/ico-deleteuser"
+import IcoSegment from "@/assets/icons/ico-segment"
+import IcoExoprt from "@/assets/icons/ico-export"
 
 const actions = [
   {
     id: "create-user",
     label: "Create User",
-    icon: UserPlus,
+    icon: <IcoUser />,
     onClick: () => {},
   },
   {
     id: "review-premium",
     label: "Review Premium",
-    icon: Crown,
+    icon: <IcoDiamond />,
     onClick: () => {},
   },
   {
     id: "review-ai-flags",
     label: "Review AI Flags",
-    icon: MessageSquareWarning,
+    icon: <IcoMessage />,
     onClick: () => {},
   },
   {
     id: "delete-user",
     label: "Delete User",
-    icon: UserMinus,
+    icon: <IcoDeleteUser />,
     onClick: () => {},
   },
   {
     id: "manage-segments",
     label: "Manage Segments",
-    icon: FileText,
+    icon: <IcoSegment />,
     onClick: () => {},
   },
   {
     id: "export-report",
     label: "Export Report",
-    icon: Users,
+    icon: <IcoExoprt />,
     onClick: () => {},
   },
-];
+]
 
 export function QuickActions() {
   return (
-    <Card className="bg-card border-border p-4 flex flex-col gap-4">
+    <Card className="flex flex-col gap-4 border-border bg-card p-4">
       <Typography variant="Medium_H4" className="text-foreground">
         Quick Actions
       </Typography>
       <div className="flex flex-wrap gap-3">
         {actions.map((action) => {
-          const Icon = action.icon;
+          const Icon = action.icon
           return (
             <button
               key={action.id}
               id={`quick-action-${action.id}`}
               onClick={action.onClick}
               className={cn(
-                "flex items-center gap-2 px-4 py-2.5 rounded-lg",
-                "bg-secondary border border-border",
+                "flex items-center gap-2 rounded-lg px-4 py-2.5",
+                "border border-border bg-secondary",
                 "text-foreground transition-all duration-200",
-                "hover:bg-primary hover:text-primary-foreground hover:border-primary",
-                "hover:shadow-md cursor-pointer"
+                "hover:border-primary hover:bg-primary hover:text-primary-foreground",
+                "cursor-pointer hover:shadow-md group"
               )}
             >
-              <Icon size={18} className="shrink-0" />
-              <Typography variant="Regular_H5" as="span" className="whitespace-nowrap">
+              <div className="text-primary group-hover:text-background">{action.icon}</div>
+              <Typography
+                variant="Regular_H5"
+                as="span"
+                className="whitespace-nowrap"
+              >
                 {action.label}
               </Typography>
             </button>
-          );
+          )
         })}
       </div>
     </Card>
-  );
+  )
 }
